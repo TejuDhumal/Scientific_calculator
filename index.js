@@ -14,9 +14,10 @@ for(item of buttons){
         else if(e.target.innerHTML== '√'){
             sqrt();
         }
-        else if(e.target.innerHTML== '∛'){
+        else if(e.target.innerHTML== '3√'){
             cuberoot();
         }
+       
         else if(e.target.innerHTML== 'π'){
             pi();
         }
@@ -67,7 +68,8 @@ for(item of buttons){
 }
      
         function backspc(){
-            document.querySelector("input").value= document.querySelector("input").value.substring(0, document.querySelector("input").value.length - 1);
+           screenvalue = screenvalue.slice(0,-1);
+           document.querySelector('input').value = screenvalue;
            }
 
        function square(){
@@ -79,19 +81,20 @@ for(item of buttons){
             screenvalue=Math.sqrt(screenvalue);
             document.querySelector("input").value=screenvalue;
        }
+       function cuberoot(){
+        screenvalue=Math.cbrt(screenvalue);
+        document.querySelector("input").value=screenvalue;
+   }
 
        function pi() {
-        screenvalue=3.14159265359;
+        screenvalue=screenvalue*3.14159265359;
         document.querySelector("input").value = screenvalue;
     }
     function cube(){
         screenvalue=screenvalue*screenvalue*screenvalue;
             document.querySelector("input").value=screenvalue;
     }
-    function cuberoot(){
-        screenvalue=Math.cuberoot(screenvalue);
-        document.querySelector("input").value=screenvalue;
-    }
+    
     function log(){
         screenvalue=Math.log(screenvalue);
         document.querySelector("input").value=screenvalue;
@@ -113,7 +116,7 @@ for(item of buttons){
         document.querySelector("input").value=screenvalue;
     }
     function evlaue(){
-        screenvalue = 2.7182818285;
+        screenvalue =screenvalue* 2.7182818285;
         document.querySelector("input").value=screenvalue;
     }
     function expo(){
